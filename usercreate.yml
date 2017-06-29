@@ -1,0 +1,15 @@
+- name: This will set up the user Kelly on the hosts
+  hosts: stuff
+  tasks:
+   - name: Create the user kelly
+     user:
+       name: kelly
+       state: present
+       generate_ssh_key: yes
+   - name: Copys a file to Kellys Directory
+     copy:
+       src: junk
+       dest: /home/kelly/oh_yeah
+       owner: kelly
+       group: kelly
+       mode: 0444
