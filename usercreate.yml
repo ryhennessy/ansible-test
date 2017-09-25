@@ -1,5 +1,5 @@
 - name: This will set up the user Kelly on the hosts
-  hosts: stuff
+  hosts: servers 
   tasks:
    - name: Create the user kelly
      user:
