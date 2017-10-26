@@ -1,6 +1,6 @@
 ---
 - name: This is the Ansible Lab playbook example 
-  hosts: tag_ansible 
+  hosts: tag_ansible_yes 
   become: yes 
   tasks:
   - name: Ensure the httpd package is installed
