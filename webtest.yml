@@ -13,16 +13,6 @@
        enabled: true 
        state: started
     when: webtext is defined
-  - name: Ensure the firewall is allowing port 80 (Firewalld)
-    firewalld:
-       service: http
-       permanent: true
-       state: enabled
-       immediate: true
-    when:  ansible_distribution_major_version == "7"
-  - name: Ensure the firewall is allowing port 80 (IPTables)
-    command: iptables -A INPUT -p tcp --dport 80 --jump ACCEPT
-    when:  ansible_distribution_major_version == "6"
   - name: Ensure the Hennessy default index.html file is in place
     template:
        src: index.j2 
