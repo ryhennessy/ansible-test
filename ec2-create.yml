@@ -1,0 +1,12 @@
+- name: Create Test EC2 Instances
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: Create the Initial Instances 
+      ec2:
+        key_name: Laptop-Key
+        group: towertesting
+        instance_type: t2.small
+        image: ami-c998b6b2
+        region: us-east-1
+        assign_public_ip: yes
