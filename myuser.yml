@@ -1,6 +1,6 @@
 ---
 - name: This creates a user on a system
-  hosts: amfamtest-tag
+  hosts: tag_amfamtest
   vars:
     my_users:
       - pete
