@@ -17,4 +17,5 @@
         name: "/home/{{ item }}/bin"
         state: directory
         mode: 0700
+      with_items: "{{ my_users }}"
 ...
