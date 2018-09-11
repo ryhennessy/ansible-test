@@ -1,0 +1,20 @@
+---
+- name: This creates a user on a system
+  hosts: amfamtest-tag
+  vars:
+    my_users:
+      - pete
+  tasks:
+    - name: Create the users needed to be on the system
+      user:
+        name: "{{ item }}"
+        state: present
+        shell: /bin/bash
+        groups: developers
+      with_items: "{{ my_users }}"
+    - name: Create the default users directories
+      file:
+        name: "/home/{{ item }}/bin"
+        state: directory
+        mode: 0700
+...
